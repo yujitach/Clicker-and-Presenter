@@ -137,7 +137,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(HTTPServer);
 		postNotificationName:HTTPServerNotificationStateChanged
 		object:self];
 }
-
+-(HTTPServerState)state
+{
+    return state;
+}
 //
 // start
 //

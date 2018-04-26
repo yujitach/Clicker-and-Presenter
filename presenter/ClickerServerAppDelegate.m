@@ -29,7 +29,7 @@
     NSString *domain = @"local";
     NSString *protocol = @"_yujitach_clicker._udp";
     NSString *name = @"";
-    int portNumber = httpServer.port-123;
+    int portNumber = (int)httpServer.port-123;
     
     netService = [[NSNetService alloc] initWithDomain:domain type:protocol name:name port: portNumber];	
     [netService scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
