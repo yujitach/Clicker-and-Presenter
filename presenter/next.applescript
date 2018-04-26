@@ -1,4 +1,4 @@
-tell application "Preview"
+tell application "Adobe Acrobat Reader DC"
 	activate
 end tell
 tell application "System Events"
