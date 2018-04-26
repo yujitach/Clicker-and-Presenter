@@ -17,10 +17,10 @@
     NSString*urlString;
 }
 
-@property (nonatomic, retain) IBOutlet Spinner *spinner;
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet ClickerViewController *viewController;
-@property (nonatomic, retain) NSString* urlString;
+@property (nonatomic, strong) IBOutlet Spinner *spinner;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet ClickerViewController *viewController;
+@property (nonatomic, strong) NSString* urlString;
 
 -(void)prev;
 -(void)next;

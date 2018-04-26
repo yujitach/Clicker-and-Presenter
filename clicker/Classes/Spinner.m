@@ -26,11 +26,11 @@
 -(id)initWithDelegate:(id<SpinnerDelegate>)d;
 {
     if ((self = [super initWithNibName:@"Spinner" bundle:nil])) {
-	delegate=d;
-	serverFound=NO;
-	netServiceBrowser = [[NSNetServiceBrowser alloc] init];
-	netServiceBrowser.delegate = self;
-	[netServiceBrowser searchForServicesOfType:@"_yujitach_clicker._udp" inDomain:@"local"];    
+    delegate=d;
+    serverFound=NO;
+    netServiceBrowser = [[NSNetServiceBrowser alloc] init];
+    netServiceBrowser.delegate = self;
+    [netServiceBrowser searchForServicesOfType:@"_yujitach_clicker._udp" inDomain:@"local"];    
     }
     return self;
 }
@@ -66,10 +66,7 @@
 
 - (void)dealloc {
     [netServiceBrowser stop];
-    [netServiceBrowser release];
     [netService stop];
-    [netService release];
-    [super dealloc];
 }
 
 #pragma mark Reachability Warning
@@ -77,11 +74,11 @@
 {
     NetworkStatus status=[self.reach currentReachabilityStatus];
     if(status==NotReachable){
-	[delegate lost];
-	self.reach=nil;
+    [delegate lost];
+    self.reach=nil;
     }else if(status==ReachableViaWiFi){
-	NSString*urlString=[NSString stringWithFormat:@"http://%@:%d/",ipString,port];
-	[delegate found:urlString];	 
+    NSString*urlString=[NSString stringWithFormat:@"http://%@:%d/",ipString,port];
+    [delegate found:urlString];     
     }
     
 }
@@ -90,7 +87,7 @@
 - (void)netServiceBrowser:(NSNetServiceBrowser *)nsb didFindService:(NSNetService *)service moreComing:(BOOL)moreDomainsComing
 {
     serverFound=YES;
-    netService=[service retain];
+    netService=service;
     [netService setDelegate:self];
     [netService resolveWithTimeout:1.0f];
 }
@@ -101,7 +98,7 @@
     self.ipString = [NSString stringWithFormat: @"%s", inet_ntoa(socketAddress->sin_addr)];
     port = ntohs(socketAddress->sin_port)+123;
     NSString*urlString=[NSString stringWithFormat:@"http://%@:%d/",ipString,port];
-    [delegate found:urlString];	 
+    [delegate found:urlString];     
 
 /*    self.reach=[Reachability reachabilityWithAddress:socketAddress];
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(reachabilityChanged:) name: kReachabilityChangedNotification object: nil];

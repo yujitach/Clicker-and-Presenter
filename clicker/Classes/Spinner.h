@@ -23,8 +23,8 @@
     NSString*ipString;
     int port;
 }
-@property (nonatomic,retain) Reachability*reach;
-@property (nonatomic,retain) NSString*ipString;
+@property (nonatomic,strong) Reachability*reach;
+@property (nonatomic,strong) NSString*ipString;
 -(id)initWithDelegate:(id<SpinnerDelegate>)d;
 -(IBAction)openDocument:(id)sender;
 @end

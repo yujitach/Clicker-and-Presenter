@@ -10,10 +10,10 @@
 
 @class ClickerAppDelegate;
 @interface ClickerViewController : UIViewController {
-    ClickerAppDelegate*appDelegate;
+    ClickerAppDelegate*__weak appDelegate;
 }
 -(IBAction)prev:(id)sender;
 -(IBAction)next:(id)sender;
-@property (nonatomic,assign) IBOutlet ClickerAppDelegate*appDelegate;
+@property (nonatomic,weak) IBOutlet ClickerAppDelegate*appDelegate;
 @end
 
