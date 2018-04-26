@@ -25,14 +25,14 @@
     NSLog(@"lost!");
     self.urlString=nil;
     spinner.modalPresentationStyle=UIModalTransitionStyleCoverVertical;
-    [self.viewController presentModalViewController:spinner animated:NO];    
+    [self.viewController presentViewController:spinner animated:NO completion:^{}];
     [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
 }
 -(void)found:(NSString*)us;
 {
     NSLog(@"found!");
     self.urlString=us;
-    [viewController dismissModalViewControllerAnimated:NO];
+    [viewController dismissViewControllerAnimated:NO completion:^{}];
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
@@ -40,7 +40,7 @@
     // Override point for customization after application launch.
 
     // Add the view controller's view to the window and display.
-    [window addSubview:viewController.view];
+    [window setRootViewController:viewController];
     [window makeKeyAndVisible];
     spinner=[[Spinner alloc] initWithDelegate:self];
     [self lost];
@@ -53,7 +53,7 @@
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
      */
-    [viewController dismissModalViewControllerAnimated:NO];
+    [viewController dismissViewControllerAnimated:NO completion:^{}];
     self.spinner=nil;
 }
 
