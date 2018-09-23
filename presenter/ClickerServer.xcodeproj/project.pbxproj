@@ -13,8 +13,8 @@
 		338A175A11DC591C00820375 /* HTTPResponseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 338A175711DC591C00820375 /* HTTPResponseHandler.m */; };
 		338A175B11DC591C00820375 /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 338A175911DC591C00820375 /* HTTPServer.m */; };
 		338A175F11DC592800820375 /* RootURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 338A175D11DC592800820375 /* RootURLResponse.m */; };
-		338A17D411DC5F5500820375 /* next.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 338A17D211DC5F5500820375 /* next.applescript */; };
-		338A17D511DC5F5500820375 /* prev.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 338A17D311DC5F5500820375 /* prev.applescript */; };
+		338A17D411DC5F5500820375 /* next.txt in Resources */ = {isa = PBXBuildFile; fileRef = 338A17D211DC5F5500820375 /* next.txt */; };
+		338A17D511DC5F5500820375 /* prev.txt in Resources */ = {isa = PBXBuildFile; fileRef = 338A17D311DC5F5500820375 /* prev.txt */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -39,8 +39,8 @@
 		338A175C11DC592800820375 /* RootURLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootURLResponse.h; sourceTree = "<group>"; };
 		338A175D11DC592800820375 /* RootURLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootURLResponse.m; sourceTree = "<group>"; };
 		338A175E11DC592800820375 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
-		338A17D211DC5F5500820375 /* next.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = next.applescript; sourceTree = "<group>"; };
-		338A17D311DC5F5500820375 /* prev.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; path = prev.applescript; sourceTree = "<group>"; };
+		338A17D211DC5F5500820375 /* next.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = next.txt; sourceTree = "<group>"; };
+		338A17D311DC5F5500820375 /* prev.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prev.txt; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ClickerServer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ClickerServer-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* ClickerServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickerServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -124,8 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				337B7C6C11DC87A00058A313 /* ClickerServer.icns */,
-				338A17D211DC5F5500820375 /* next.applescript */,
-				338A17D311DC5F5500820375 /* prev.applescript */,
+				338A17D211DC5F5500820375 /* next.txt */,
+				338A17D311DC5F5500820375 /* prev.txt */,
 				8D1107310486CEB800E47090 /* ClickerServer-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
@@ -195,8 +195,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				338A17D411DC5F5500820375 /* next.applescript in Resources */,
-				338A17D511DC5F5500820375 /* prev.applescript in Resources */,
+				338A17D411DC5F5500820375 /* next.txt in Resources */,
+				338A17D511DC5F5500820375 /* prev.txt in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				337B7C6D11DC87A00058A313 /* ClickerServer.icns in Resources */,
@@ -245,7 +245,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 95AQ7YKR5A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -256,6 +259,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yujitach.clickerServer;
 				PRODUCT_NAME = ClickerServer;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -264,7 +268,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 95AQ7YKR5A;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ClickerServer_Prefix.pch;
@@ -272,6 +279,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yujitach.clickerServer;
 				PRODUCT_NAME = ClickerServer;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

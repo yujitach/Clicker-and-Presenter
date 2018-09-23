@@ -15,10 +15,12 @@
 
 -(void)loadAppleScripts
 {
-    prev=[[NSAppleScript alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"prev" withExtension:@"applescript"]
+    prev=[[NSAppleScript alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"prev" withExtension:@"txt"]
 						error:NULL];
-    next=[[NSAppleScript alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"next" withExtension:@"applescript"]
+ //   [prev compileAndReturnError:nil];
+    next=[[NSAppleScript alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"next" withExtension:@"txt"]
 						error:NULL];
+//    [next compileAndReturnError:nil];
 }
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application 
@@ -36,12 +38,20 @@
     [netService publish];
     [self loadAppleScripts];
 }
+-(void)runScriptNamed:(NSString*)foo
+{
+    NSString*s=[[NSBundle mainBundle] pathForResource:foo ofType:@"txt"];
+    NSString*command=[NSString stringWithFormat:@"osascript %@",s];
+    dispatch_async(dispatch_get_global_queue(0, 0),^{system([command UTF8String]);});
+}
 -(void)prev
 {
-    [prev executeAndReturnError:NULL];
+//    dispatch_async(dispatch_get_main_queue(),^{[prev executeAndReturnError:nil];});
+    [self runScriptNamed:@"prev"];
 }
 -(void)next
 {
-    [next executeAndReturnError:NULL];
+//    dispatch_async(dispatch_get_main_queue(),^{[next executeAndReturnError:nil];});
+    [self runScriptNamed:@"next"];
 }
 @end
