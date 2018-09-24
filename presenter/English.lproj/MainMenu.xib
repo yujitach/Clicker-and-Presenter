@@ -11,7 +11,7 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
                 <menuItem title="ClickerServer" id="56">
@@ -54,6 +54,68 @@
                             <menuItem title="Quit ClickerServer" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="File" id="xPb-hB-uXN">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="File" id="1gx-9V-Epg">
+                        <items>
+                            <menuItem title="New" keyEquivalent="n" id="jtO-t0-cEL">
+                                <connections>
+                                    <action selector="newDocument:" target="-1" id="uie-z8-oSt"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open…" keyEquivalent="o" id="eWx-3b-qee">
+                                <connections>
+                                    <action selector="openDocument:" target="-1" id="Sqt-BD-mDT"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open Recent" id="IjF-ay-xeC">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="ouB-jS-Am5">
+                                    <items>
+                                        <menuItem title="Clear Menu" id="2yq-T9-r9B">
+                                            <connections>
+                                                <action selector="clearRecentDocuments:" target="-1" id="sIn-AR-y7y"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="nd9-Sb-7Eo"/>
+                            <menuItem title="Close" keyEquivalent="w" id="Okv-99-M8I">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="uJB-ih-w6k"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save" keyEquivalent="s" id="vMW-Gl-P0A">
+                                <connections>
+                                    <action selector="saveDocument:" target="-1" id="zYi-rC-cv9"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save As…" keyEquivalent="S" id="3mx-wJ-fiU">
+                                <connections>
+                                    <action selector="saveDocumentAs:" target="-1" id="DbJ-Zk-bKg"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Revert to Saved" id="azg-wu-fdh">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="revertDocumentToSaved:" target="-1" id="2sQ-hQ-Zn9"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="R7a-K9-2Mv"/>
+                            <menuItem title="Page Setup…" keyEquivalent="P" id="f0i-lQ-FN5">
+                                <connections>
+                                    <action selector="runPageLayout:" target="-1" id="hyg-9b-jJV"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Print…" keyEquivalent="p" id="P2Q-06-tnu">
+                                <connections>
+                                    <action selector="print:" target="-1" id="sU4-gT-yZm"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -108,6 +170,7 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="126" y="288"/>
         </menu>
         <window title="ClickerServer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>

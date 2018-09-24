@@ -16,10 +16,16 @@
     NSNetService*netService;
     NSAppleScript*prev;
     NSAppleScript*next;
-    PDFViewerController*pvc;
+    PDFViewerController*_pvc;
 }
 @synthesize window;
-
+-(PDFViewerController*)pvc
+{
+    if(!_pvc){
+        _pvc=[[PDFViewerController alloc] init];
+    }
+    return _pvc;
+}
 -(void)loadAppleScripts
 {
     prev=[[NSAppleScript alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"prev" withExtension:@"txt"]
@@ -44,10 +50,22 @@
     [netService scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     [netService publish];
     
-    pvc=[[PDFViewerController alloc] init];
-    [pvc showWindow:nil];
-    [pvc loadPDF:[NSURL fileURLWithPath:@"/Users/yujitach/Dropbox/misc-presentations/suugakukai-Sep-2018/presentation/presentation.pdf"]];
     [self loadAppleScripts];
+}
+-(IBAction)openDocument:(id)sender
+{
+    NSOpenPanel*panel=[NSOpenPanel openPanel];
+    panel.allowedFileTypes=@[@"pdf"];
+    [panel runModal];
+    NSURL*url=panel.URLs[0];
+    [self.pvc loadPDF:url];
+    [[NSDocumentController sharedDocumentController] noteNewRecentDocumentURL:url];
+}
+-(BOOL)application:(NSApplication *)sender openFile:(nonnull NSString *)filename
+{
+    NSURL*url=[NSURL fileURLWithPath:filename];
+    [self.pvc loadPDF:url];
+    return YES;
 }
 -(void)runScriptNamed:(NSString*)foo
 {
@@ -65,13 +83,13 @@
 //    dispatch_async(dispatch_get_main_queue(),^{[prev executeAndReturnError:nil];});
 //    [self activateTargetApp];
 //    [self runScriptNamed:@"prev"];
-    [pvc minusonepage];
+    [self.pvc minusonepage];
 }
 -(IBAction)next:(id)sender
 {
 //    dispatch_async(dispatch_get_main_queue(),^{[next executeAndReturnError:nil];});
 //    [self activateTargetApp];
 //    [self runScriptNamed:@"next"];
-    [pvc plusonepage];
+    [self.pvc plusonepage];
 }
 @end

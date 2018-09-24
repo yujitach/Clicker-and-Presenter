@@ -20,7 +20,7 @@
 }
 -(NSImage*)imageAtPageNumber:(NSUInteger)pageNumber
 {
-    NSImage*image=[NSImage imageWithSize:imageView.frame.size flipped:NO drawingHandler:^BOOL(NSRect dstRect) {
+    NSImage*image=[NSImage imageWithSize:[NSScreen mainScreen].frame.size flipped:NO drawingHandler:^BOOL(NSRect dstRect) {
         CGPDFPageRef pdfPage = CGPDFDocumentGetPage (currentPDF, pageNumber);
         CGRect cropBox= CGPDFPageGetBoxRect(pdfPage, kCGPDFCropBox) ;
         CGRect mediaBox= CGPDFPageGetBoxRect(pdfPage, kCGPDFMediaBox) ;
@@ -46,6 +46,8 @@
 }
 -(void)loadPDF:(NSURL*)fileURL
 {
+    [self showWindow:nil];
+    [self.window toggleFullScreen:nil];
     self.window.representedURL=fileURL;
     self.window.title=fileURL.lastPathComponent;
     if(currentPDF){
