@@ -175,31 +175,28 @@
         <window title="ClickerServer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="608" width="497" height="142"/>
+            <rect key="contentRect" x="335" y="608" width="497" height="102"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="497" height="142"/>
+                <rect key="frame" x="0.0" y="0.0" width="497" height="102"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" id="535">
-                        <rect key="frame" x="20" y="20" width="457" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <rect key="frame" x="20" y="20" width="457" height="62"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="fhW-cc-PsR">
-                            <rect key="frame" x="0.0" y="0.0" width="457" height="96"/>
+                            <rect key="frame" x="0.0" y="0.0" width="457" height="62"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textView editable="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="538">
-                                    <rect key="frame" x="0.0" y="0.0" width="457" height="96"/>
+                                <textView editable="NO" drawsBackground="NO" importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" findStyle="panel" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="538">
+                                    <rect key="frame" x="0.0" y="0.0" width="457" height="62"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                    <size key="minSize" width="457" height="96"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="457" height="62"/>
                                     <size key="maxSize" width="463" height="10000000"/>
                                     <attributedString key="textStorage">
-                                        <fragment>
-                                            <string key="content">Please keep this application open
-while you are presenting slides in Preview.
-For more info, click </string>
+                                        <fragment content="You can control a PDF presentation with your iPhone. For more info, see ">
                                             <attributes>
                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <font key="NSFont" size="22" name="Helvetica"/>
@@ -208,9 +205,8 @@ For more info, click </string>
                                         </fragment>
                                         <fragment content="here">
                                             <attributes>
-                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 <font key="NSFont" size="22" name="Helvetica"/>
-                                                <url key="NSLink" string="http://www.sns.ias.edu/~yujitach/clicker/"/>
+                                                <url key="NSLink" string="https://member.ipmu.jp/yuji.tachikawa/clicker"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                             </attributes>
                                         </fragment>
@@ -225,7 +221,6 @@ For more info, click </string>
                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 </textView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </clipView>
                         <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="537">
                             <rect key="frame" x="-100" y="-100" width="457" height="15"/>
@@ -238,6 +233,7 @@ For more info, click </string>
                     </scrollView>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="133" y="124"/>
         </window>
         <customObject id="494" customClass="ClickerServerAppDelegate">
             <connections>
