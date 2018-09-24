@@ -17,6 +17,7 @@
 		338A175F11DC592800820375 /* RootURLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 338A175D11DC592800820375 /* RootURLResponse.m */; };
 		338A17D411DC5F5500820375 /* next.txt in Resources */ = {isa = PBXBuildFile; fileRef = 338A17D211DC5F5500820375 /* next.txt */; };
 		338A17D511DC5F5500820375 /* prev.txt in Resources */ = {isa = PBXBuildFile; fileRef = 338A17D311DC5F5500820375 /* prev.txt */; };
+		339117F6215922E900C93699 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 339117F5215922E900C93699 /* Images.xcassets */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -46,8 +47,9 @@
 		338A175E11DC592800820375 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		338A17D211DC5F5500820375 /* next.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = next.txt; sourceTree = "<group>"; };
 		338A17D311DC5F5500820375 /* prev.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = prev.txt; sourceTree = "<group>"; };
+		339117F5215922E900C93699 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ClickerServer/Images.xcassets; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ClickerServer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ClickerServer-Info.plist"; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* ClickerServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClickerServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1107320486CEB800E47090 /* Presenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Presenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +104,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D1107320486CEB800E47090 /* ClickerServer.app */,
+				8D1107320486CEB800E47090 /* Presenter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -131,6 +133,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				339117F5215922E900C93699 /* Images.xcassets */,
 				337B7C6C11DC87A00058A313 /* ClickerServer.icns */,
 				338A17D211DC5F5500820375 /* next.txt */,
 				338A17D311DC5F5500820375 /* prev.txt */,
@@ -153,9 +156,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* ClickerServer */ = {
+		8D1107260486CEB800E47090 /* Presenter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ClickerServer" */;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Presenter" */;
 			buildPhases = (
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
@@ -165,10 +168,10 @@
 			);
 			dependencies = (
 			);
-			name = ClickerServer;
+			name = Presenter;
 			productInstallPath = "$(HOME)/Applications";
 			productName = ClickerServer;
-			productReference = 8D1107320486CEB800E47090 /* ClickerServer.app */;
+			productReference = 8D1107320486CEB800E47090 /* Presenter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -193,7 +196,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* ClickerServer */,
+				8D1107260486CEB800E47090 /* Presenter */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +208,7 @@
 			files = (
 				338A17D411DC5F5500820375 /* next.txt in Resources */,
 				338A17D511DC5F5500820375 /* prev.txt in Resources */,
+				339117F6215922E900C93699 /* Images.xcassets in Resources */,
 				3360E7102158D321009F7913 /* PDFViewerController.xib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
@@ -254,6 +258,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -267,8 +272,8 @@
 				GCC_PREFIX_HEADER = ClickerServer_Prefix.pch;
 				INFOPLIST_FILE = "ClickerServer-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yujitach.clickerServer;
-				PRODUCT_NAME = ClickerServer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yujitach.presenter;
+				PRODUCT_NAME = Presenter;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
@@ -277,6 +282,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -287,8 +293,8 @@
 				GCC_PREFIX_HEADER = ClickerServer_Prefix.pch;
 				INFOPLIST_FILE = "ClickerServer-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yujitach.clickerServer;
-				PRODUCT_NAME = ClickerServer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yujitach.presenter;
+				PRODUCT_NAME = Presenter;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
@@ -369,7 +375,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "ClickerServer" */ = {
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Presenter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4B08A954540054247B /* Debug */,
