@@ -10,7 +10,12 @@
 #import "HTTPServer.h"
 
 @implementation ClickerServerAppDelegate
-
+{
+    NSWindow *window;
+    NSNetService*netService;
+    NSAppleScript*prev;
+    NSAppleScript*next;
+}
 @synthesize window;
 
 -(void)loadAppleScripts
@@ -36,6 +41,7 @@
     netService = [[NSNetService alloc] initWithDomain:domain type:protocol name:name port: portNumber];	
     [netService scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     [netService publish];
+    
     [self loadAppleScripts];
 }
 -(void)runScriptNamed:(NSString*)foo
@@ -44,14 +50,21 @@
     NSString*command=[NSString stringWithFormat:@"osascript %@",s];
     dispatch_async(dispatch_get_global_queue(0, 0),^{system([command UTF8String]);});
 }
--(void)prev
+-(void)activateTargetApp
+{
+    NSRunningApplication*app=[NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.adobe.Reader"][0];
+    [app activateWithOptions:NSApplicationActivateIgnoringOtherApps|NSApplicationActivateAllWindows];
+}
+-(IBAction)prev:(id)sender
 {
 //    dispatch_async(dispatch_get_main_queue(),^{[prev executeAndReturnError:nil];});
+    [self activateTargetApp];
     [self runScriptNamed:@"prev"];
 }
--(void)next
+-(IBAction)next:(id)sender
 {
 //    dispatch_async(dispatch_get_main_queue(),^{[next executeAndReturnError:nil];});
+    [self activateTargetApp];
     [self runScriptNamed:@"next"];
 }
 @end

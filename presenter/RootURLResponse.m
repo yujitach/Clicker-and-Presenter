@@ -91,9 +91,9 @@
 {
     NSString*x=[[url absoluteString] lastPathComponent];
     if([x isEqualToString:@"prev"]){
-	[(ClickerServerAppDelegate*)[NSApp delegate] prev];
+        [(ClickerServerAppDelegate*)[NSApp delegate] prev:self];
     }else if([x isEqualToString:@"next"]){
-	[(ClickerServerAppDelegate*)[NSApp delegate] next];
+        [(ClickerServerAppDelegate*)[NSApp delegate] next:self];
     }
     return nil;
 }

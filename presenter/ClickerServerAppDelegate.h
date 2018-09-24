@@ -8,15 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ClickerServerAppDelegate : NSObject {
-    NSWindow *window;
-    NSNetService*netService;
-    NSAppleScript*prev;
-    NSAppleScript*next;
-}
+@interface ClickerServerAppDelegate : NSObject 
 
 @property (assign) IBOutlet NSWindow *window;
 
--(void)prev;
--(void)next;
+-(IBAction)prev:(id)sender;
+-(IBAction)next:(id)sender;
 @end
