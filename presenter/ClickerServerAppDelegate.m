@@ -8,6 +8,7 @@
 
 #import "ClickerServerAppDelegate.h"
 #import "HTTPServer.h"
+#import "PDFViewerController.h"
 
 @implementation ClickerServerAppDelegate
 {
@@ -15,6 +16,7 @@
     NSNetService*netService;
     NSAppleScript*prev;
     NSAppleScript*next;
+    PDFViewerController*pvc;
 }
 @synthesize window;
 
@@ -42,6 +44,9 @@
     [netService scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     [netService publish];
     
+    pvc=[[PDFViewerController alloc] init];
+    [pvc showWindow:nil];
+    [pvc loadPDF:[NSURL fileURLWithPath:@"/Users/yujitach/Dropbox/misc-presentations/suugakukai-Sep-2018/presentation/presentation.pdf"]];
     [self loadAppleScripts];
 }
 -(void)runScriptNamed:(NSString*)foo
@@ -58,13 +63,15 @@
 -(IBAction)prev:(id)sender
 {
 //    dispatch_async(dispatch_get_main_queue(),^{[prev executeAndReturnError:nil];});
-    [self activateTargetApp];
-    [self runScriptNamed:@"prev"];
+//    [self activateTargetApp];
+//    [self runScriptNamed:@"prev"];
+    [pvc minusonepage];
 }
 -(IBAction)next:(id)sender
 {
 //    dispatch_async(dispatch_get_main_queue(),^{[next executeAndReturnError:nil];});
-    [self activateTargetApp];
-    [self runScriptNamed:@"next"];
+//    [self activateTargetApp];
+//    [self runScriptNamed:@"next"];
+    [pvc plusonepage];
 }
 @end
