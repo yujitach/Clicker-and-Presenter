@@ -17,6 +17,7 @@
     NSAppleScript*prev;
     NSAppleScript*next;
     PDFViewerController*_pvc;
+    IOPMAssertionID assertionID;
 }
 @synthesize window;
 -(PDFViewerController*)pvc
@@ -80,7 +81,6 @@
 }
 -(void)assertActive
 {
-    IOPMAssertionID assertionID;
     IOPMAssertionDeclareUserActivity((CFStringRef)@"presenting a slide using Presenter.app", kIOPMUserActiveLocal, &assertionID);
 }
 -(IBAction)prev:(id)sender
