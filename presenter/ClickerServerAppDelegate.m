@@ -9,7 +9,7 @@
 #import "ClickerServerAppDelegate.h"
 #import "HTTPServer.h"
 #import "PDFViewerController.h"
-
+#import <IOKit/pwr_mgt/IOPMLib.h>
 @implementation ClickerServerAppDelegate
 {
     NSWindow *window;
@@ -78,11 +78,17 @@
     NSRunningApplication*app=[NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.adobe.Reader"][0];
     [app activateWithOptions:NSApplicationActivateIgnoringOtherApps|NSApplicationActivateAllWindows];
 }
+-(void)assertActive
+{
+    IOPMAssertionID assertionID;
+    IOPMAssertionDeclareUserActivity((CFStringRef)@"presenting a slide using Presenter.app", kIOPMUserActiveLocal, &assertionID);
+}
 -(IBAction)prev:(id)sender
 {
 //    dispatch_async(dispatch_get_main_queue(),^{[prev executeAndReturnError:nil];});
 //    [self activateTargetApp];
 //    [self runScriptNamed:@"prev"];
+    [self assertActive];
     [self.pvc minusonepage];
 }
 -(IBAction)next:(id)sender
@@ -90,6 +96,7 @@
 //    dispatch_async(dispatch_get_main_queue(),^{[next executeAndReturnError:nil];});
 //    [self activateTargetApp];
 //    [self runScriptNamed:@"next"];
+    [self assertActive];
     [self.pvc plusonepage];
 }
 @end

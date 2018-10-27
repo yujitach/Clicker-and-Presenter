@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* ClickerServerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* ClickerServerAppDelegate.m */; };
+		333BBC712184B87F00F230CE /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333BBC702184B87F00F230CE /* IOKit.framework */; };
 		3360E70F2158D321009F7913 /* PDFViewerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3360E70D2158D321009F7913 /* PDFViewerController.m */; };
 		3360E7102158D321009F7913 /* PDFViewerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3360E70E2158D321009F7913 /* PDFViewerController.xib */; };
 		337B7C6D11DC87A00058A313 /* ClickerServer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 337B7C6C11DC87A00058A313 /* ClickerServer.icns */; };
@@ -34,6 +35,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		333BBC702184B87F00F230CE /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		333BBC722184B91000F230CE /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		3360E70C2158D321009F7913 /* PDFViewerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFViewerController.h; sourceTree = "<group>"; };
 		3360E70D2158D321009F7913 /* PDFViewerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFViewerController.m; sourceTree = "<group>"; };
 		3360E70E2158D321009F7913 /* PDFViewerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDFViewerController.xib; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				333BBC712184B87F00F230CE /* IOKit.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +90,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				333BBC722184B91000F230CE /* IOKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -147,6 +152,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				333BBC702184B87F00F230CE /* IOKit.framework */,
 				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
