@@ -18,6 +18,8 @@
     NSAppleScript*next;
     PDFViewerController*_pvc;
     IOPMAssertionID assertionID;
+    NSSound*haagerup1;
+    NSSound*haagerup2;
 }
 @synthesize window;
 -(PDFViewerController*)pvc
@@ -52,6 +54,9 @@
     [netService publish];
     
     [self loadAppleScripts];
+    
+    haagerup1=[[NSSound alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"haagerup-1" withExtension:@"mp3"] byReference:NO];
+    haagerup2=[[NSSound alloc] initWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"haagerup-2" withExtension:@"mp3"] byReference:NO];
 }
 -(IBAction)openDocument:(id)sender
 {
@@ -98,5 +103,13 @@
 //    [self runScriptNamed:@"next"];
     [self assertActive];
     [self.pvc plusonepage];
+}
+-(IBAction)haagerup1:(id)sender
+{
+    [haagerup1 play];
+}
+-(IBAction)haagerup2:(id)sender
+{
+    [haagerup2 play];
 }
 @end
